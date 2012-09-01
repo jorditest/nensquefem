@@ -27,7 +27,13 @@ class DemoController extends Controller
      */
     public function helloAction($name)
     {
+//        $de = $this->get('jl_em.extractor');
+//        $name = $de->getParser();
+        $de = $this->get('nensquefem_core.sources_extractor');
+        $name = $de->test();
+
         return array('name' => $name);
+//        return array('name' => $name);
     }
 
     /**

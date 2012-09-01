@@ -57,3 +57,12 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+
+jordi_llonch_events_manager:
+    sources:
+        guia_bcn:
+          spider: NensQueFem\Bundle\CoreBundle\Extractor\Spiders\GuiaBcn
+          parser: NensQueFem\Bundle\CoreBundle\Extractor\Parsers\GuiaBcn
+        diba:
+          spider: NensQueFem\Bundle\CoreBundle\Extractor\Spiders\Diba
+          parser: NensQueFem\Bundle\CoreBundle\Extractor\Parsers\Diba
