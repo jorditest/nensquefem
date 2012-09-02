@@ -3,19 +3,23 @@ NensquefemCoreBundle:
     type:     annotation
     prefix:   /
 
-JordiLlonchEventsManagerBundle:
-    resource: "@JordiLlonchEventsManagerBundle/Controller/"
-    type:     annotation
-    prefix:   /
+#JordiLlonchEventsManagerBundle:
+#    resource: "@JordiLlonchEventsManagerBundle/Controller/"
+#    type:     annotation
+#    prefix:   /
 
 NensQueFemParsersBundle:
     resource: "@NensQueFemParsersBundle/Controller/"
     type:     annotation
     prefix:   /
 
+#NensQueFemFrontBundle:
+#    resource: "@NensQueFemFrontBundle/Controller/"
+#    type:     annotation
+#    prefix:   /
+
 NensQueFemFrontBundle:
-    resource: "@NensQueFemFrontBundle/Controller/"
-    type:     annotation
+    resource: "@NensQueFemFrontBundle/Resources/config/routing.yml"
     prefix:   /
 
 # Internal routing configuration to handle ESI
