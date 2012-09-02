@@ -6,9 +6,6 @@
 
 namespace JordiLlonch\Bundle\EventsManagerBundle\Extractor;
 
-use JordiLlonch\Bundle\EventsManagerBundle\Extractor\Spiders\Base as Spider;
-use JordiLlonch\Bundle\EventsManagerBundle\Extractor\Parsers\Base as Parser;
-
 class DataExtractor
 {
     protected $sources;
@@ -18,19 +15,33 @@ class DataExtractor
         $this->sources = $sources;
     }
 
-    // temp
-    public function getParser()
-    {
-        return $this->sources[0]['parser'];
-    }
+//    // temp
+//    public function getParser()
+//    {
+//        return $this->sources[0]['parser'];
+//    }
 
     public function run($sourceNum = null)
     {
-        // execute spider
-        $data = $this->spider->run();
+        if($sourceNum == null)
+        {
+            $c = count($this->sources);
+            $start = 0;
+        }
+        else
+        {
+            $start = $sourceNum;
+            $c = $start + 1;
+        }
 
-        // execute parser
-        $this->parser->setData($data);
-        $this->parser->run();
+        for($i=$start; $i<$c; $i++)
+        {
+            $spiderClass = $this->sources[$i]['spider'];
+            $parseClass = $this->sources[$i]['parser'];
+
+            $parser = new $parseClass();
+            $spider = new $spiderClass($parser);
+            $spider->run();
+        }
     }
 }
