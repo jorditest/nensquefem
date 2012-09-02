@@ -4,6 +4,16 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
+    <parameters>
+        <parameter key="jordi_llonch_events_manager.sources">null</parameter>
+    </parameters>
+
+    <services>
+        <service id="jordi_llonch_events_manager.data_extractor" class="JordiLlonch\Bundle\EventsManagerBundle\Extractor\DataExtractor">
+            <argument>%jordi_llonch_events_manager.sources%</argument>
+        </service>
+    </services>
+
     <!--
     <parameters>
         <parameter key="jordi_llonch_events_manager.example.class">JordiLlonch\Bundle\EventsManagerBundle\Example</parameter>

@@ -8,15 +8,11 @@ NensquefemCoreBundle:
 #    type:     annotation
 #    prefix:   /
 
+
 NensQueFemParsersBundle:
     resource: "@NensQueFemParsersBundle/Controller/"
     type:     annotation
     prefix:   /
-
-#NensQueFemFrontBundle:
-#    resource: "@NensQueFemFrontBundle/Controller/"
-#    type:     annotation
-#    prefix:   /
 
 NensQueFemFrontBundle:
     resource: "@NensQueFemFrontBundle/Resources/config/routing.yml"
