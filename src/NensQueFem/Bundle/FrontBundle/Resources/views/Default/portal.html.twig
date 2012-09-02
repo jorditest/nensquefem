@@ -1,0 +1,53 @@
+{% extends '::frontal.html.twig' %}
+
+
+{% block article %}
+
+
+
+
+
+
+<div class="container">
+
+    <div class="logo-header">
+        <h1>Nens Que Fem</h1>
+        <p>Cercar d'activitats per a nens.</p>
+   </div>
+
+    <div class="well well-small">
+        <form action="{{ path('NQFFrontBundle_portada') }}" method="post" {{ form_enctype(form_search) }}>
+            {{ form_errors(form_search) }}
+
+            {{ form_row(form_search.category) }}
+            {{ form_row(form_search.city) }}
+
+            {{ form_row(form_search.date_from) }}
+
+
+            <div>
+                {{ form_label(form_search.date_up) }}
+                {{ form_errors(form_search.date_up) }}
+                {{ form_widget(form_search.date_up, { 'attr': {'class': 'date_up_field_super_class'} }) }}
+            </div>
+
+
+            {{ form_row(form_search.years) }}
+
+            <input type="submit" />
+        </form>
+    </div>
+
+
+
+
+    <hr>
+
+    <footer>
+        <p>&copy; Company 2012</p>
+    </footer>
+
+</div> <!-- /container -->
+
+
+{% endblock %}
