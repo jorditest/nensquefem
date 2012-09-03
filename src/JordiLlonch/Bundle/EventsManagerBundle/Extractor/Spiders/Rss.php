@@ -6,10 +6,17 @@
 
 namespace JordiLlonch\Bundle\EventsManagerBundle\Extractor\Spiders;
 
-class Rss extends Base
-{
-    public function run()
-    {
+use JordiLlonch\Bundle\EventsManagerBundle\Extractor\Parsers\Base as BaseParser;
 
+abstract class Rss extends Base
+{
+    protected $feed;
+
+    public function __construct(BaseParser $parser)
+    {
+        parent::__construct($parser);
+
+        $this->feed = new \SimplePie();
+        $this->feed->enable_cache(false);
     }
 }

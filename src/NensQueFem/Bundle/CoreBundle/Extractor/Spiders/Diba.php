@@ -10,5 +10,7 @@ use JordiLlonch\Bundle\EventsManagerBundle\Extractor\Spiders\Web;
 
 class Diba extends Web
 {
-
+    public function run()
+    {
+    }
 }
