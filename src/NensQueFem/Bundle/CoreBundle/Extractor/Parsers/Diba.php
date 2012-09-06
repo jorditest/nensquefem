@@ -1,14 +1,14 @@
 <?php
 /**
  * @author Jordi Llonch <llonch.jordi@gmail.com>
- * @date 30/08/12 16:11
+ * @date 02/09/12 21:44
  */
 
 namespace NensQueFem\Bundle\CoreBundle\Extractor\Parsers;
 
 use JordiLlonch\Bundle\EventsManagerBundle\Extractor\Parsers\Base;
 
-class GuiaBcn extends Base
+class Diba extends Base
 {
     public function run()
     {

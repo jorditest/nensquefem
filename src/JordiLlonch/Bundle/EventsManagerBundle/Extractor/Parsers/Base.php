@@ -8,6 +8,5 @@ namespace JordiLlonch\Bundle\EventsManagerBundle\Extractor\Parsers;
 
 abstract class Base
 {
-    abstract public function setData($data);
     abstract public function run();
 }

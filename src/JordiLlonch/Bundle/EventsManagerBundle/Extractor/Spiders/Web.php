@@ -6,10 +6,8 @@
 
 namespace JordiLlonch\Bundle\EventsManagerBundle\Extractor\Spiders;
 
-class Web extends Base
-{
-    public function run()
-    {
+use JordiLlonch\Bundle\EventsManagerBundle\Extractor\Parsers\Base as BaseParser;
 
-    }
+abstract class Web extends Base
+{
 }

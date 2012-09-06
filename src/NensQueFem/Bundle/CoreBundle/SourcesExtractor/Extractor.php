@@ -17,10 +17,10 @@ class Extractor
         $this->dataExtractor = $dataExtractor;
     }
 
-    public function test()
-    {
-        return $this->dataExtractor->getParser();
-    }
+//    public function test()
+//    {
+//        return $this->dataExtractor->getParser();
+//    }
 
     /**
      * Llança les aranyes, parseja dades i les guarda
