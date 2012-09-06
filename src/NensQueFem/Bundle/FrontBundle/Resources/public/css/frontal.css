@@ -5,3 +5,8 @@ body {
 .logo-header{
     text-align: center;
 }
+.show-div {
+    background-color: #EEEEEE;
+    border-radius: 3px 3px 3px 3px;
+    padding: 5px 0px 0px 0px;
+}

@@ -15,7 +15,8 @@ NensQueFemParsersBundle:
     prefix:   /
 
 NensQueFemFrontBundle:
-    resource: "@NensQueFemFrontBundle/Resources/config/routing.yml"
+    resource: "@NensQueFemFrontBundle/Controller/"
+    type:     annotation
     prefix:   /
 
 # Internal routing configuration to handle ESI

@@ -10,7 +10,14 @@ use NensQueFem\Bundle\FrontBundle\Form\SearchActivitatType;
 
 class DefaultController extends Controller
 {
-    public function portadaAction()
+
+    /**
+     * @Route("/home", defaults={"url_search" = 1}, name="NQFFrontBundle_home")
+     * @Route("/search", defaults={"url_search" = 1}, name="NQFFrontBundle_search")
+     * @Route("/search/{url_search}", name="NQFFrontBundle_search_param")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function searchAction($url_search)
     {
         $peticion = $this->getRequest();
 
@@ -18,7 +25,7 @@ class DefaultController extends Controller
         $form_search   = $this->createForm(new SearchActivitatType(), $search_arr);
 
 
-        return $this->render('NensQueFemFrontBundle:Default:portal.html.twig', array(
+        return $this->render('NensQueFemFrontBundle:Default:home.html.twig', array(
             'entities'      => array(),
             'form_search'   => $form_search->createView()
         ));
