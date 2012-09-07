@@ -24,9 +24,10 @@ class DefaultController extends Controller
         $search_arr = array();
         $form_search   = $this->createForm(new SearchActivitatType(), $search_arr);
 
+        $search_result_arr    = $this->get('nqf.search')->getResult($search_arr);
 
         return $this->render('NensQueFemFrontBundle:Default:home.html.twig', array(
-            'entities'      => array(),
+            'search_result_arr'    => $search_result_arr,
             'form_search'   => $form_search->createView()
         ));
     }

@@ -52,6 +52,69 @@
 
     <hr>
 
+
+    <div class="row">
+        <div class="span3">
+            <h4>Totals:</h4>
+
+            {% for key, total_arr in search_result_arr.total_arr %}
+                <h5><i class="icon-chevron-right"></i> {{key}}:</h5>
+                <ul class="nav nav-list">
+                    {% for total in total_arr %}
+                    <li>
+                        <a href="#"><i class="i"></i> {{ total }} ({{ random(10) }})</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+
+
+        </div>
+
+        <div class="span9">
+            <h5>Results:</h5>
+
+            <ul class="unstyled">
+                {% for result in search_result_arr.result_arr %}
+                    <li>
+                        <div>
+                            <h6><a href="#">{{ result.title }}</a></h6>
+                            <p>{{ result.description }}</p>
+
+                            <ul class="breadcrumb">
+                                <li>{{ result.category_arr | join(', ') }} <span class="divider">/</span></li>
+                                <li>{{ result.city_arr | join(', ') }} <span class="divider">/</span></li>
+                                <li>{{ result.years_arr | join(', ') }} <span class="divider">/</span></li>
+                                <li>{{ result.date_arr | join(', ') }}</li>
+                            </ul>
+                        </div>
+                        <hr>
+
+                    </li>
+                {% else %}
+                    No .....
+                {% endfor %}
+            </ul>
+
+
+            <div class="pagination pagination-centered">
+                <ul>
+                    <li class="disabled"><a href="#">Prev</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">Next</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
     <footer>
         <p>&copy; Company 2012</p>
     </footer>

@@ -66,3 +66,8 @@ jordi_llonch_events_manager:
         diba:
           spider: NensQueFem\Bundle\CoreBundle\Extractor\Spiders\Diba
           parser: NensQueFem\Bundle\CoreBundle\Extractor\Parsers\Diba
+
+services:
+    nqf.search:
+        class: NensQueFem\Bundle\FrontBundle\Lib\NqfSearch
+        arguments: ['NqfSearchMongo']
