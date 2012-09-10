@@ -70,4 +70,4 @@ jordi_llonch_events_manager:
 services:
     nqf.search:
         class: NensQueFem\Bundle\FrontBundle\Lib\NqfSearch
-        arguments: ['NqfSearchMongo']
+        arguments:  [NensQueFem\Bundle\FrontBundle\Lib\NqfSearchMongo]

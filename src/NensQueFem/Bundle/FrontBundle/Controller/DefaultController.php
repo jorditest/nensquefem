@@ -21,14 +21,34 @@ class DefaultController extends Controller
     {
         $peticion = $this->getRequest();
 
-        $search_arr = array();
-        $form_search   = $this->createForm(new SearchActivitatType(), $search_arr);
+        $params = array();
+        $formSearch   = $this->createForm(new SearchActivitatType(), $params);
 
-        $search_result_arr    = $this->get('nqf.search')->getResult($search_arr);
+        $searchResult    = $this->get('nqf.search')->getResult($params);
 
         return $this->render('NensQueFemFrontBundle:Default:home.html.twig', array(
-            'search_result_arr'    => $search_result_arr,
-            'form_search'   => $form_search->createView()
+            'search_result_arr'    => $searchResult,
+            'form_search'   => $formSearch->createView()
         ));
+    }
+
+    /**
+     * @param $param_arr
+     * @return string
+     */
+    public function ArrayToSlug($param_arr)
+    {
+
+        return 'slug';
+    }
+
+    /**
+     * @param $slug
+     * @return array
+     */
+    public function SlugToArray($slug)
+    {
+
+        return array();
     }
 }

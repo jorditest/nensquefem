@@ -10,22 +10,20 @@ use NensQueFem\Bundle\FrontBundle\Lib\NqfSearchMongo;
 class NqfSearch
 {
     protected $handler;
-    protected $limit_page;
+    protected $limitPage;
 
-    function __construct($handler_class)
+    function __construct($handlerClass)
     {
-        $this->limit_page = 20;
-        if($handler_class == 'NqfSearchMongo')
-            $this->handler = new NqfSearchMongo();
-        else
-            throw new exception('Error handler class');
+        $this->limitPage = 20;
+
+        $this->handler = new $handlerClass();
     }
 
     /**
      * @param $params_arr
      * @return array
      */
-    public function getResult($params_arr)
+    public function getResult($params)
     {
        $result = array();
        for($i = 0; $i < 20; $i++)
@@ -48,7 +46,7 @@ class NqfSearch
            );
 
 
-       $paginator = array(  'limit_page'    => $this->limit_page,
+       $paginator = array(  'limit_page'    => $this->limitPage,
                             'total'         => 100);
 
 
